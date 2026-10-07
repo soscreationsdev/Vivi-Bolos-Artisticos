@@ -1,0 +1,1489 @@
+:root {
+    --ink: #443b3b;
+    --muted: #817575;
+    --rose: #d99aa5;
+    --rose-dark: #b96e7d;
+    --rose-light: #f9edef;
+    --sage: #aeb9a4;
+    --cream: #fffaf7;
+    --line: #eee4e1;
+    --white: #ffffff;
+    --serif: "Playfair Display", Georgia, serif;
+    --sans: "DM Sans", Arial, sans-serif;
+    --shadow: 0 18px 55px rgba(91, 58, 62, 0.11);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+}
+
+
+body {
+    margin: 0;
+
+    color: var(--ink);
+    background: var(--white);
+
+    font-family: var(--sans);
+    line-height: 1.6;
+}
+
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+button {
+    font: inherit;
+}
+
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+
+::selection {
+    color: var(--ink);
+    background: #f3d9df;
+}
+
+
+/* =========================================
+   BARRA SUPERIOR
+========================================= */
+
+.top-strip {
+    padding: 7px 16px;
+
+    text-align: center;
+
+    background: var(--rose-light);
+    color: #8d626b;
+
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+}
+
+
+.top-strip p {
+    margin: 0;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    min-height: 82px;
+
+    padding: 16px clamp(20px, 6vw, 90px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 28px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-bottom: 1px solid rgba(238, 228, 225, 0.8);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 20;
+
+    backdrop-filter: blur(14px);
+}
+
+
+/* =========================================
+   LOGOTIPO
+========================================= */
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 11px;
+
+    font-family: var(--serif);
+    font-size: 1.2rem;
+
+    white-space: nowrap;
+}
+
+
+.brand strong {
+    display: block;
+
+    margin-top: -7px;
+
+    font-family: var(--sans);
+
+    font-size: 0.68rem;
+
+    letter-spacing: 0.13em;
+
+    text-transform: uppercase;
+
+    font-weight: 600;
+}
+
+
+.brand-mark {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid var(--rose);
+
+    border-radius: 50% 50% 46% 46%;
+
+    color: var(--rose-dark);
+
+    font-family: var(--serif);
+
+    font-size: 1.5rem;
+
+    font-style: italic;
+}
+
+
+/* =========================================
+   LINKS DA NAVBAR
+========================================= */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    gap: clamp(16px, 2.5vw, 34px);
+
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+
+.nav-links > a:not(.nav-cta) {
+    transition: color 0.2s ease;
+}
+
+
+.nav-links > a:not(.nav-cta):hover {
+    color: var(--rose-dark);
+}
+
+
+.nav-cta {
+    padding: 12px 17px;
+
+    border-radius: 4px;
+
+    background: var(--rose-light);
+
+    color: #875762;
+}
+
+
+/* =========================================
+   MENU MOBILE
+========================================= */
+
+.mobile-nav {
+    display: none;
+}
+
+
+.mobile-nav summary {
+    list-style: none;
+
+    cursor: pointer;
+
+    padding: 8px;
+}
+
+
+.mobile-nav summary::-webkit-details-marker {
+    display: none;
+}
+
+
+.mobile-nav summary span {
+    display: block;
+
+    width: 24px;
+    height: 2px;
+
+    margin: 5px 0;
+
+    background: var(--ink);
+}
+
+
+.mobile-nav-links {
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 0;
+
+    padding: 8px 20px 18px;
+
+    background: white;
+
+    border-bottom: 1px solid var(--line);
+
+    box-shadow: 0 15px 25px rgba(91, 58, 62, 0.07);
+}
+
+
+.mobile-nav-links a {
+    padding: 12px 8px;
+}
+
+
+.mobile-nav-links .nav-cta {
+    margin-top: 7px;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    display: grid;
+
+    grid-template-columns: 1.02fr 0.98fr;
+
+    align-items: center;
+
+    gap: clamp(30px, 6vw, 90px);
+
+    padding: 74px clamp(24px, 8vw, 120px) 90px;
+
+    background:
+        linear-gradient(
+            115deg,
+            #ffffff 0%,
+            #ffffff 55%,
+            #fff8f7 100%
+        );
+
+    overflow: hidden;
+}
+
+
+.hero-copy {
+    max-width: 590px;
+}
+
+
+h1,
+h2 {
+    font-family: var(--serif);
+
+    font-weight: 500;
+
+    letter-spacing: -0.035em;
+
+    line-height: 1.12;
+}
+
+
+h1 {
+    margin: 20px 0;
+
+    font-size: clamp(2.7rem, 5vw, 5rem);
+}
+
+
+h1 em,
+h2 em {
+    color: var(--rose-dark);
+
+    font-weight: 500;
+}
+
+
+.hero-copy > p {
+    max-width: 490px;
+
+    color: var(--muted);
+
+    font-size: 1rem;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================
+   BOTÕES
+========================================= */
+
+.hero-actions {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 24px;
+
+    margin-top: 30px;
+}
+
+
+.button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 17px;
+
+    min-height: 50px;
+
+    padding: 14px 21px;
+
+    border: 1px solid transparent;
+
+    border-radius: 4px;
+
+    font-size: 0.83rem;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+
+.button-primary {
+    background: var(--rose-dark);
+
+    color: white;
+}
+
+
+.button-primary:hover {
+    background: #a95e6d;
+}
+
+
+.text-link {
+    font-size: 0.83rem;
+
+    font-weight: 700;
+}
+
+
+.text-link:hover {
+    color: var(--rose-dark);
+}
+
+
+/* =========================================
+   HORÁRIO DE ATENDIMENTO
+========================================= */
+
+.availability {
+    display: flex;
+
+    gap: 12px;
+
+    align-items: flex-start;
+
+    margin-top: 43px;
+
+    padding-top: 23px;
+
+    border-top: 1px solid var(--line);
+}
+
+
+.availability-dot {
+    flex: 0 0 9px;
+
+    width: 9px;
+    height: 9px;
+
+    margin-top: 7px;
+
+    border-radius: 50%;
+
+    background: #91a786;
+
+    box-shadow: 0 0 0 4px #edf2e9;
+}
+
+
+.availability strong,
+.availability span {
+    display: block;
+}
+
+
+.availability strong {
+    font-size: 0.8rem;
+}
+
+
+.availability div > span {
+    color: var(--muted);
+
+    font-size: 0.78rem;
+}
+
+
+/* =========================================
+   IMAGEM PRINCIPAL
+   477 X 477 PX
+========================================= */
+
+.hero-art {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 495px;
+
+    justify-self: end;
+
+    padding: 0 18px 22px 0;
+}
+
+
+.hero-image {
+    width: 477px;
+    height: 477px;
+
+    max-width: 100%;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    background: #f0e2df;
+
+    box-shadow: var(--shadow);
+}
+
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    border-radius: inherit;
+}
+
+
+/* =========================================
+   CARTÃO DA FOTO PRINCIPAL
+========================================= */
+
+.image-note {
+    position: absolute;
+
+    left: -26px;
+
+    bottom: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px 18px;
+
+    background: white;
+
+    border-radius: 5px;
+
+    box-shadow: var(--shadow);
+}
+
+
+.image-note > span {
+    color: var(--rose-dark);
+
+    font-size: 1.6rem;
+}
+
+
+.image-note strong,
+.image-note small {
+    display: block;
+}
+
+
+.image-note strong {
+    font-family: var(--serif);
+
+    font-size: 1rem;
+}
+
+
+.image-note small {
+    color: var(--muted);
+
+    font-size: 0.7rem;
+}
+
+
+/* =========================================
+   ELEMENTOS DECORATIVOS
+========================================= */
+
+.decor {
+    position: absolute;
+
+    color: var(--rose);
+}
+
+
+.decor-two {
+    bottom: 12%;
+
+    right: -1%;
+
+    color: var(--sage);
+
+    font-size: 2.3rem;
+}
+
+
+.hero-caption {
+    position: absolute;
+
+    right: 0;
+
+    bottom: -2px;
+
+    color: var(--muted);
+
+    font-family: var(--serif);
+
+    font-size: 0.88rem;
+
+    font-style: italic;
+}
+
+
+/* =========================================
+   SEÇÕES GERAIS
+========================================= */
+
+.section-shell {
+    padding: 86px clamp(24px, 7vw, 104px);
+}
+
+
+.intro {
+    display: grid;
+
+    grid-template-columns: 1fr 0.8fr;
+
+    align-items: end;
+
+    gap: 70px;
+
+    padding-top: 75px;
+
+    padding-bottom: 58px;
+}
+
+
+h2 {
+    margin: 13px 0 0;
+
+    font-size: clamp(2rem, 3.4vw, 3.25rem);
+}
+
+
+.intro > p {
+    max-width: 510px;
+
+    margin: 0 0 5px;
+
+    color: var(--muted);
+
+    font-size: 0.92rem;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================
+   GALERIAS
+========================================= */
+
+.gallery-section {
+    padding-top: 42px;
+
+    padding-bottom: 78px;
+}
+
+
+.section-tinted {
+    background: var(--cream);
+}
+
+
+.section-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    gap: 32px;
+
+    margin-bottom: 30px;
+}
+
+
+.section-heading > p {
+    max-width: 340px;
+
+    margin: 0 0 4px;
+
+    color: var(--muted);
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================
+   GRID DOS BOLOS
+========================================= */
+
+.cake-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+
+/* =========================================
+   CARTÕES INDIVIDUAIS
+========================================= */
+
+.cake-card {
+    min-width: 0;
+
+    overflow: hidden;
+
+    background: white;
+
+    border: 1px solid #f0e8e5;
+
+    border-radius: 5px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.cake-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 14px 30px rgba(91, 58, 62, 0.09);
+}
+
+
+/* =========================================
+   IMAGENS DOS BOLOS
+========================================= */
+
+.cake-image {
+    width: 100%;
+
+    aspect-ratio: 4 / 4.5;
+
+    overflow: hidden;
+
+    background: #f1e7e3;
+}
+
+
+.cake-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition: transform 0.3s ease;
+}
+
+
+.cake-card:hover .cake-image img {
+    transform: scale(1.03);
+}
+
+
+/* =========================================
+   NOME E DESCRIÇÃO
+========================================= */
+
+.cake-info {
+    padding: 15px 16px 17px;
+}
+
+
+.cake-info h3 {
+    margin: 0 0 5px;
+
+    font-family: var(--serif);
+
+    font-size: 1.08rem;
+
+    font-weight: 600;
+}
+
+
+.cake-info p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 0.75rem;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================
+   SEÇÃO DE PREÇOS
+========================================= */
+
+.pricing-section {
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    align-items: center;
+
+    gap: clamp(35px, 7vw, 100px);
+
+    padding-top: 100px;
+
+    padding-bottom: 100px;
+}
+
+
+.pricing-intro > p {
+    max-width: 430px;
+
+    margin: 22px 0 0;
+
+    color: var(--muted);
+
+    font-size: 0.88rem;
+
+    line-height: 1.85;
+}
+
+
+.pricing-intro .price-note {
+    margin-top: 10px;
+
+    color: #9c737b;
+
+    font-size: 0.78rem;
+}
+
+
+/* =========================================
+   TABELA DE PREÇOS
+========================================= */
+
+.price-table-wrap {
+    padding: 27px 30px 25px;
+
+    border: 1px solid var(--line);
+
+    border-radius: 5px;
+
+    background: #fffdfc;
+}
+
+
+.price-table-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding-bottom: 13px;
+
+    border-bottom: 1px solid var(--line);
+
+    color: var(--muted);
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+
+.price-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 17px 0;
+
+    border-bottom: 1px solid var(--line);
+}
+
+
+.price-row:last-of-type {
+    border-bottom: 0;
+}
+
+
+.price-row div strong,
+.price-row div small {
+    display: block;
+}
+
+
+.price-row div strong {
+    font-family: var(--serif);
+
+    font-size: 1.1rem;
+}
+
+
+.price-row div small {
+    color: var(--muted);
+
+    font-size: 0.72rem;
+}
+
+
+.price-row > strong {
+    color: var(--rose-dark);
+
+    font-size: 0.84rem;
+
+    text-align: right;
+}
+
+
+.price-button {
+    width: 100%;
+
+    margin-top: 19px;
+}
+
+
+/* =========================================
+   ÁREA DE ENCOMENDAS
+========================================= */
+
+.order-section {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 80px 24px;
+
+    text-align: center;
+
+    background: #bd7d89;
+
+    color: white;
+}
+
+
+.order-content {
+    position: relative;
+
+    z-index: 1;
+
+    max-width: 760px;
+
+    margin: 0 auto;
+}
+
+
+.order-section .eyebrow {
+    color: #ffebee;
+}
+
+
+.order-section h2 {
+    margin: 15px 0 18px;
+
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+}
+
+
+.order-section h2 em {
+    color: #ffe0e6;
+}
+
+
+.order-content > p {
+    max-width: 590px;
+
+    margin: 0 auto 27px;
+
+    color: #fff2f3;
+
+    font-size: 0.92rem;
+
+    line-height: 1.8;
+}
+
+
+.button-light {
+    background: white;
+
+    color: #875762;
+}
+
+
+.button-light:hover {
+    background: #fff4f5;
+}
+
+
+.order-hint {
+    display: block;
+
+    margin-top: 13px;
+
+    color: #ffe8ec;
+
+    font-size: 0.69rem;
+}
+
+
+.order-decor {
+    position: absolute;
+
+    top: -90px;
+
+    right: 7%;
+
+    color: rgba(255, 255, 255, 0.13);
+
+    font-size: 18rem;
+
+    line-height: 1;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    padding: 40px clamp(24px, 7vw, 104px) 20px;
+
+    background: #fffaf8;
+
+    text-align: center;
+}
+
+
+.footer-brand {
+    justify-content: center;
+}
+
+
+.footer > p {
+    margin: 14px 0 30px;
+
+    color: var(--muted);
+
+    font-size: 0.8rem;
+}
+
+
+.footer-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid var(--line);
+
+    color: var(--muted);
+
+    font-size: 0.72rem;
+}
+
+
+.footer-bottom a {
+    color: #95636c;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   TELAS GRANDES
+========================================= */
+
+@media (min-width: 1500px) {
+
+    .hero,
+    .section-shell {
+        padding-left: max(100px, calc((100vw - 1280px) / 2));
+
+        padding-right: max(100px, calc((100vw - 1280px) / 2));
+    }
+
+}
+
+
+/* =========================================
+   TABLETS E NOTEBOOKS MENORES
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .navbar {
+        padding-left: 28px;
+
+        padding-right: 28px;
+    }
+
+
+    .nav-links {
+        gap: 16px;
+
+        font-size: 0.76rem;
+    }
+
+
+    .hero {
+        padding-left: 45px;
+
+        padding-right: 45px;
+
+        gap: 35px;
+    }
+
+
+    .hero-image {
+        width: 100%;
+
+        height: auto;
+
+        aspect-ratio: 1 / 1;
+    }
+
+
+    .cake-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+
+    .section-shell {
+        padding-left: 45px;
+
+        padding-right: 45px;
+    }
+
+}
+
+
+/* =========================================
+   CELULARES
+========================================= */
+
+@media (max-width: 760px) {
+
+    html {
+        scroll-padding-top: 70px;
+    }
+
+
+    .top-strip {
+        font-size: 0.67rem;
+    }
+
+
+    .navbar {
+        min-height: 70px;
+
+        padding: 12px 20px;
+    }
+
+
+    .brand {
+        font-size: 1.05rem;
+    }
+
+
+    .brand-mark {
+        width: 37px;
+
+        height: 37px;
+    }
+
+
+    .brand strong {
+        font-size: 0.59rem;
+    }
+
+
+    /* Esconde menu desktop */
+
+    .desktop-nav {
+        display: none;
+    }
+
+
+    /* Mostra menu mobile */
+
+    .mobile-nav {
+        display: block;
+
+        position: relative;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        padding: 54px 24px 65px;
+
+        gap: 48px;
+    }
+
+
+    .hero-copy {
+        max-width: 600px;
+    }
+
+
+    h1 {
+        font-size: clamp(2.65rem, 10vw, 4rem);
+    }
+
+
+    .hero-copy > p {
+        font-size: 0.92rem;
+    }
+
+
+    .availability {
+        margin-top: 30px;
+    }
+
+
+    .hero-art {
+        width: min(100%, 477px);
+
+        justify-self: center;
+
+        padding-right: 12px;
+    }
+
+
+    .hero-image {
+        width: 100%;
+
+        height: auto;
+
+        aspect-ratio: 1 / 1;
+
+        border-radius: 24px;
+    }
+
+
+    .image-note {
+        left: -7px;
+
+        bottom: 55px;
+    }
+
+
+    .decor-two {
+        right: -2px;
+    }
+
+
+    /* INTRODUÇÃO */
+
+    .section-shell {
+        padding: 60px 22px;
+    }
+
+
+    .intro {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        padding-top: 58px;
+
+        padding-bottom: 35px;
+    }
+
+
+    .intro > p {
+        font-size: 0.86rem;
+    }
+
+
+    /* GALERIAS */
+
+    .gallery-section {
+        padding-top: 28px;
+
+        padding-bottom: 55px;
+    }
+
+
+    .section-heading {
+        display: block;
+
+        margin-bottom: 24px;
+    }
+
+
+    .section-heading > p {
+        margin-top: 12px;
+    }
+
+
+    .cake-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 13px;
+    }
+
+
+    .cake-image {
+        aspect-ratio: 4 / 4.4;
+    }
+
+
+    .cake-info {
+        padding: 12px 11px 14px;
+    }
+
+
+    .cake-info h3 {
+        font-size: 0.98rem;
+    }
+
+
+    .cake-info p {
+        font-size: 0.7rem;
+    }
+
+
+    /* PREÇOS */
+
+    .pricing-section {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        padding-top: 65px;
+
+        padding-bottom: 65px;
+    }
+
+
+    .price-table-wrap {
+        padding: 20px 17px;
+    }
+
+
+    .price-row {
+        padding: 15px 0;
+    }
+
+
+    .price-row > strong {
+        font-size: 0.76rem;
+    }
+
+
+    .price-row div strong {
+        font-size: 1rem;
+    }
+
+
+    .price-row div small {
+        font-size: 0.67rem;
+    }
+
+
+    /* ENCOMENDAS */
+
+    .order-section {
+        padding: 65px 23px;
+    }
+
+
+    .order-decor {
+        right: -10%;
+
+        font-size: 12rem;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+        padding: 34px 22px 18px;
+    }
+
+}
+
+
+/* =========================================
+   CELULARES PEQUENOS
+========================================= */
+
+@media (max-width: 380px) {
+
+    .brand {
+        gap: 7px;
+
+        font-size: 0.98rem;
+    }
+
+
+    .brand-mark {
+        width: 33px;
+
+        height: 33px;
+    }
+
+
+    .hero-actions {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 17px;
+    }
+
+
+    .cake-grid {
+        gap: 10px;
+    }
+
+
+    .cake-info h3 {
+        font-size: 0.9rem;
+    }
+
+
+    .cake-info p {
+        font-size: 0.66rem;
+    }
+
+
+    .price-table-heading {
+        font-size: 0.61rem;
+    }
+
+
+    .price-row {
+        gap: 8px;
+    }
+
+
+    .price-row > strong {
+        max-width: 115px;
+    }
+
+
+    .footer-bottom {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+}
+
+
+/* =========================================
+   ACESSIBILIDADE
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+
+        animation-duration: 0.01ms !important;
+    }
+
+}
